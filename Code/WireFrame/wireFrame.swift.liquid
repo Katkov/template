@@ -1,0 +1,32 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+import UIKit
+
+class {{ module_info.name }}WireFrame: {{ module_info.name }}WireFrameProtocol {
+	
+    weak var navigation : UINavigationController?
+
+    func present{{ module_info.name }}(navigation: UINavigationController) {
+        let view = {{ module_info.name }}ViewController()
+        let presenter = {{ module_info.name }}Presenter()
+        let interactor = {{ module_info.name }}Interactor()
+        
+        self.navigation = navigation
+        
+        // Connecting
+        view.presenter = presenter
+        presenter.view = view
+        presenter.wireFrame = self
+        presenter.interactor = interactor
+        interactor.presenter = presenter
+        
+        navigation.pushViewController(view as UIViewController, animated: true)
+        
+    }
+}

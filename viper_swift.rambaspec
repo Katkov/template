@@ -1,0 +1,22 @@
+# Template information section
+name: "viper_swift"
+summary: "Swift VIPER module template"
+author: "Anton Makarov"
+version: "0.1.0"
+license: "MIT"
+
+# The declarations for code files
+
+code_files:
+- {name: Protocols.swift, path: Code/protocols.swift.liquid}
+# View layer
+- {name: View/ViewController.swift, path: Code/View/viewcontroller.swift.liquid}
+
+# Presenter layer
+- {name: Presenter/Presenter.swift, path: Code/Presenter/presenter.swift.liquid}
+
+# Interactor layer
+- {name: Interactor/Interactor.swift, path: Code/Interactor/interactor.swift.liquid}
+
+# Router layer
+- {name: WireFrame/Wireframe.swift, path: Code/WireFrame/wireFrame.swift.liquid}
